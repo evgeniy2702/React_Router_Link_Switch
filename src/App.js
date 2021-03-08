@@ -13,6 +13,7 @@ import City from "./Components/City";
 import MainInteresting from "./Components/MainInteresting";
 import Interesting from "./Components/Interesting";
 import Pics from "./Components/Pics";
+import Items from "./Components/Items";
 
 export default class App extends React.Component {
   render() {
@@ -38,7 +39,10 @@ class Header extends React.Component {
             <Link to="/main/interesting">Main interesting in cty</Link>
           </li>
           <li>
-            <Link to="/interesting">Interesting in cty</Link>
+            <Link to="/interesting">Interesting in city</Link>
+          </li>
+          <li>
+            <Link to="/interestingList">List of interestings in city</Link>
           </li>
           <li>
             <Link to="/pics">Pics of city</Link>
@@ -58,7 +62,9 @@ class Main extends React.Component {
           <Route excat path="/about" component={City} />
           <Route path="/main/interesting" component={MainInteresting} />
           <Route path="/interesting" component={Interesting} />
+          <Route path="/interestingList" component={Items} />
           <Route path="/pics" component={Pics} />
+          <Redirect from ="/" to ="" />
         </Switch>
       </main>
     );
