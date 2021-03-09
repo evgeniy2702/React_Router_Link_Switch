@@ -3,8 +3,10 @@ import "./../style.css";
 import {NavLink } from "react-router-dom";
 
 import { CityData } from "./../Const/CityData";
+import { Pictures } from "./../Const/Pictures";
+
 const array = CityData.interesting;
-const picsArray = CityData.pics;
+const picsArray = Pictures;
 
 export default class Item extends Component{
   render(){

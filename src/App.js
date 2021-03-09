@@ -14,6 +14,7 @@ import MainInteresting from "./Components/MainInteresting";
 import Interesting from "./Components/Interesting";
 import Pics from "./Components/Pics";
 import Items from "./Components/Items";
+import Login from "./Forms/Login";
 
 export default class App extends React.Component {
   render() {
@@ -47,6 +48,9 @@ class Header extends React.Component {
           <li>
             <Link to="/pics">Pics of city</Link>
           </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
         <Link to="/">In start menu</Link>
       </header>
@@ -64,6 +68,7 @@ class Main extends React.Component {
           <Route path="/interesting" component={Interesting} />
           <Route path="/interestingList" component={Items} />
           <Route path="/pics" component={Pics} />
+          <Route path="/login" component={Login} />
           <Redirect from ="/" to ="" />
         </Switch>
       </main>
