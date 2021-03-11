@@ -12,6 +12,7 @@ class Login extends React.Component {
   
   constructor(props){
     super(props);
+    var logins = Logins;
     this.state = {
       login:"",
       password:""
@@ -48,12 +49,11 @@ class Login extends React.Component {
       <div>     
       <form onSubmit={this.onSubmit}>
         {data.map( (item, index) => {
-            return <Input elem = {item} key = {index} onChange = {this.onChange}/>
+          return <Input elem = {item} key = {index} onChange = {this.onChange}/>
         })}
-
         <button>SEND</button>
       </form>
-     
+    
       </div>
     );
   }
