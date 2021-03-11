@@ -1,57 +1,64 @@
 import React from "react";
 import "../style.css";
+import { Link, Redirect, Route, Switch, BrowserRouter as Router} from "react-router-dom";
 
-import Pictures from "./Const/Pictures";
+import {Logins} from "./../Const/Logins";
+import Registration from "./../Forms/Registration";
+import Input from "./../Forms/Input";
+
+const array = Logins;
 
 class Login extends React.Component {
-  constructor(props) {
+  
+  constructor(props){
     super(props);
     this.state = {
-      name: "",
-      src: "",
-      desc: "",
-      tags: []
+      login:"",
+      password:""
     };
     this.onChange = this.onChange.bind(this);
-    this.onClick = this.onClick.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }  
+
+  onChange(idData,dataInput) {
+    this.setState({[idData]: dataInput})
   }
 
-  onChange(event) {
-    this.state.name = this.setState(event.target.value);
-  }
+  onSubmit(e){
+    e.preventDefault();
+    for(let i = 0; i < Logins.length; i ++){
+      if(this.state.login === Logins[i].login && 
+      this.state.password === Logins[i].password){
+        console.log(this.state.login + " " + this.state.password);
+        return <Registration />
+    }
+      else {
+        console.log("false");
+      }
+    }
+      }
+  
 
-  onClick(event) {
-    alert(Name - `{this.state.name}`);
-  }
-
-  render() {
+  render() {   
+    const{login, password} = this.state;
+    const data = [
+      [login,"login"],[password, "password"]
+    ];
     return (
-      <form >
-        <label for="login">Login :</label>
-        <input
-          type="text"
-          placeholder="Enter your Login"
-          id="login"
-          name="login" 
-        />
-        <br />
-        <br />
-        <label for="password">Password :</label>
-        <input
-          type="password"
-          placeholder="Enter your password"
-          id="password"
-          name="password"
-        />
-        <br />
-        <br />
-        <input
-          type="submit"
-          value="SEND"
-          onClick={alert("Name -" + `${this.state.name}`)}
-        />
+      <div>     
+      <form onSubmit={this.onSubmit}>
+        {data.map( (item, index) => {
+            return <Input elem = {item} key = {index} onChange = {this.onChange}/>
+        })}
+
+        <button>SEND</button>
       </form>
+     
+      </div>
     );
+  }
+  componentDidUpdate(){
+    console.log(this.state)
   }
 }
 

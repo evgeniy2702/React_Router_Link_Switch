@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./../style.css";
 import { Switch, Route, NavLink } from "react-router-dom";
 
-import { CityData } from "./../Const/CityData";
 import List from "./List";
 import Item from "./Item";
 

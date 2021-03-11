@@ -12,7 +12,8 @@ class List extends Component {
         <ul>
           {CityData.interesting.map(item => (
             <li key={item.id}>
-              <NavLink to={`/interestingList/${item.id}`}>{item.name}</NavLink>
+              <NavLink style={{color:"red"}}
+               to={`/interestingList/${item.id}`}>{item.name}</NavLink>
             </li>
           ))}
         </ul>
