@@ -24,7 +24,6 @@ class Login extends React.Component {
   onChange(idData,dataInput) {
     this.setState({[idData]: dataInput})
   }
-
   onSubmit(e){
     e.preventDefault();
     for(let i = 0; i < Logins.length; i ++){
@@ -37,9 +36,8 @@ class Login extends React.Component {
         console.log("false");
       }
     }
-      }
+  }
   
-
   render() {   
     const{login, password} = this.state;
     const data = [
@@ -49,7 +47,7 @@ class Login extends React.Component {
       <div>     
       <form onSubmit={this.onSubmit}>
         {data.map( (item, index) => {
-          return <Input elem = {item} key = {index} onChange = {this.onChange}/>
+          return <Input elem = {item} key = {index} onChange = {this.onChange}  />
         })}
         <button>SEND</button>
       </form>
