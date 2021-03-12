@@ -46,9 +46,8 @@ function Input({elem, onChange}){
   )
 }
 
-Input.PropTypes = {
+Input.propTypes = {
   elem: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  validColor: PropTypes.func.isRequired
 }
 export default Input;

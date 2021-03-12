@@ -15,6 +15,7 @@ import Interesting from "./Components/Interesting";
 import Pics from "./Components/Pics";
 import Items from "./Components/Items";
 import Login from "./Forms/Login";
+import Registration from "./Forms/Registration";
 
 export default class App extends React.Component {
   render() {
@@ -69,6 +70,7 @@ class Main extends React.Component {
           <Route path="/interestingList" component={Items} />
           <Route path="/pics" component={Pics} />
           <Route path="/login" component={Login} />
+          <Route path="/registration" component={Registration} />
           <Redirect from ="/" to ="" />
         </Switch>
       </main>

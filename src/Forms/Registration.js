@@ -3,6 +3,7 @@ import "../style.css";
 import {Route} from "react-router-dom";
 
 import {Logins} from "./../Const/Logins";
+import Input  from "./../Forms/Input";
 
 const array = Logins;
 
@@ -44,30 +45,20 @@ class Registration extends React.Component {
 
   render() {
     const{ login, password} = this.state;
+    const data = [
+      [login,"Enter your login"],[password, "Enter youpassword"]
+    ];
     return (
+      <div>     
       <form onSubmit={this.onSubmit}>
-        <label>Enter your login :</label>
-        <input
-          id = "login"
-          type="text"
-          placeholder="Enter your Login"
-          value = {login}
-          onChange = {this.onChange} 
-        />
-        <br />
-        <br />
-        <label>Enter your password :</label>
-        <input
-          id = "password"
-          type="password"
-          placeholder="Enter your password"
-          value = {password}
-          onChange = {this.onChange}
-        />
-        <br />
-        <br />
+      <h2>Registration :</h2>
+        {data.map( (item, index) => {
+          return <Input elem = {item} key = {index} onChange = {this.onChange}  />
+        })}
         <button>SEND</button>
       </form>
+    
+      </div>
     );
   }
   componentDidUpdate(){
