@@ -1,6 +1,5 @@
-import React from "react";
 
-export const Pictures = [
+const Pictures = [
     {
        id:1,
       name: "First pic",
@@ -17,3 +16,4 @@ export const Pictures = [
       src:"https://infotolium.com/uploads/posts/2011-09/1316224641_0_61c41_82d386b9_orig.jpg"
     }
   ];
+  export default Pictures;

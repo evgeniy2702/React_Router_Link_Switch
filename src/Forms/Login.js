@@ -2,8 +2,7 @@ import React from "react";
 import "../style.css";
 import { Link, Redirect, Route, Switch, BrowserRouter as Router} from "react-router-dom";
 
-import {Logins} from "./../Const/Logins";
-import Registration from "./../Forms/Registration";
+import Logins from "./../Const/Logins";
 import Input from "./../Forms/Input";
 
 const array = Logins;

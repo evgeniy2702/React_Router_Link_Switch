@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./../style.css";
 
-import {CityData} from "./../Const/CityData";
+import CityData from "./../Const/CityData";
 
 
 export default class MainInteresting extends Component{

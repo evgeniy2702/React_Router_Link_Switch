@@ -1,6 +1,6 @@
 import React from "react";
 import "./../style.css";
-import { Pictures } from "./../Const/Pictures";
+import  Pictures  from "./../Const/Pictures";
 
 export default class Pics extends React.Component {
   render() {

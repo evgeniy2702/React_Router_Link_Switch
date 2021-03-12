@@ -1,6 +1,6 @@
 import React from "react";
 import "./../style.css";
-import { CityData } from "./../Const/CityData";
+import CityData from "./../Const/CityData";
 
 export default class City extends React.Component {
   render() {

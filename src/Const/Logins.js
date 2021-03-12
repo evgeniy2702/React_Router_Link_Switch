@@ -1,3 +1,4 @@
-import React from "react";
 
-export const Logins = [{id:1,login:"qwe", password:"123"}];
+const Logins = [{id:1,login:"qwe", password:"123"}];
+
+export default Logins;

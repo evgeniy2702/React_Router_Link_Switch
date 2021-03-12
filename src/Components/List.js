@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./../style.css";
 import { NavLink } from "react-router-dom";
 
-import { CityData } from "./../Const/CityData";
+import CityData from "./../Const/CityData";
 
 class List extends Component {
   render() {

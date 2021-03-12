@@ -1,7 +1,6 @@
 import React from "react";
 import "./../style.css";
 import PropTypes from "prop-types";
-import {Logins} from "./../Const/Logins";
 
 function Input({elem, change, onValid}){
 

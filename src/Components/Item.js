@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./../style.css";
 import {NavLink } from "react-router-dom";
 
-import { CityData } from "./../Const/CityData";
-import { Pictures } from "./../Const/Pictures";
+import CityData  from "./../Const/CityData";
+import Pictures  from "./../Const/Pictures";
 
 const array = CityData.interesting;
 const picsArray = Pictures;

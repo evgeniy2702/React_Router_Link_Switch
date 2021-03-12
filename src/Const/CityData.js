@@ -1,6 +1,5 @@
-import React from "react";
 
-export const CityData = {
+const CityData = {
   about: {
     name: "Kiev",
     population: 45000,
@@ -29,3 +28,5 @@ export const CityData = {
     }
   ]
 };
+
+export default CityData;

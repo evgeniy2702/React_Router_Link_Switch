@@ -2,7 +2,7 @@ import React from "react";
 import "../style.css";
 import {Route} from "react-router-dom";
 
-import {Logins} from "./../Const/Logins";
+import Logins from "./../Const/Logins";
 import Input  from "./../Forms/Input";
 
 const array = Logins;
@@ -25,12 +25,15 @@ class Registration extends React.Component {
   }
 
   handlerValid(elem){
+    console.log(elem + " " + /d+/.test(5).val)
     for(let i = 0; i< Logins.length; i++){
-    if(elem.length > 3)
+    if((/^d+/.test(elem))
     return {borderColor: "green"};
-    if(elem.l === 3)
+    else {
+    if(elem.length === 3)
     return {borderColor: "green"};
     return {borderColor: "red"}
+    }
     }
   }
 
