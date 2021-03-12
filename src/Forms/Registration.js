@@ -12,48 +12,43 @@ class Registration extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      login:"",
-      password:""
+      loginReg:"",
+      passwordReg:""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handlerValid = this.handlerValid.bind(this);
   }  
 
-  onChange(event) {
-    let{ id, value} = event.target;
-    this.setState({[id]: value});
+  onChange(idData,dataInput) {
+    this.setState({[idData]: dataInput})
+  }
+
+  handlerValid(elem){
+    for(let i = 0; i< Logins.length; i++){
+    if(elem.length > 3)
+    return {borderColor: "green"};
+    if(elem.l === 3)
+    return {borderColor: "green"};
+    return {borderColor: "red"}
+    }
   }
 
   onSubmit(e){
     e.preventDefault();
-    let num = 0;
-    let user = {id:0, login:"", password:""};
-    for(let i = 0; i < array.length; i++){
-      if(array[i].login !== this.state.login && array[i].password !== this.state.password){
-        num++;           
-      } else {
-        <Redirect from="/registration" to="/registration" component = {Registration} />
-      }
-      }
-    user.id = num;
-    user.login = this.state.login;
-    user.password = this.state.password;
-    array.push(user);
-      <Route path="/login" component={Login} />
-
-  }
+    }
 
   render() {
-    const{ login, password} = this.state;
+    const{ loginReg, passwordReg} = this.state;
     const data = [
-      [login,"Enter your login"],[password, "Enter your password"]
+      [loginReg,"loginReg","Enter your Login"],[passwordReg, "passwordReg","Enter your Password"]
     ];
     return (
       <div>     
       <form onSubmit={this.onSubmit}>
       <h2>Registration :</h2>
         {data.map( (item, index) => {
-          return <Input elem = {item} key = {index} onChange = {this.onChange}  />
+          return <Input elem = {item} key = {index} change = {this.onChange}  onValid = {this.handlerValid} />
         })}
         <button>SEND</button>
       </form>

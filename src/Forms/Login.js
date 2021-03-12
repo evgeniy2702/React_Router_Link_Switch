@@ -20,11 +20,23 @@ class Login extends React.Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handlerValid = this.handlerValid.bind(this);
   }  
 
   onChange(idData,dataInput) {
     this.setState({[idData]: dataInput})
   }
+
+  handlerValid(elem){
+    for(let i = 0; i< Logins.length; i++){
+    if(elem === Logins[i].login)
+    return {borderColor: "green"};
+    if(elem === Logins[i].password)
+    return {borderColor: "green"};
+    return {borderColor: "red"}
+    }
+  }
+
   onSubmit(e){
     e.preventDefault();
     for(let i = 0; i < Logins.length; i ++){
@@ -43,16 +55,15 @@ class Login extends React.Component {
   render() {   
     const{login, password, logger} = this.state;
     const data = [
-      [login,"Your login"],[password, "Your password"]
-    ];
+      [login,"login", "Login"],[password, "password", "Password"]]
 
     if(!logger){
     return (
       <div>     
       <form onSubmit={this.onSubmit}>
-      <h2>Login :</h2>
+      <h2>Sign in :</h2>
         {data.map( (item, index) => {
-          return <Input elem = {item} key = {index} onChange = {this.onChange}  />
+          return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} />
         })}
         <button>SEND</button>
       </form>

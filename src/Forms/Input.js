@@ -3,41 +3,25 @@ import "./../style.css";
 import PropTypes from "prop-types";
 import {Logins} from "./../Const/Logins";
 
-function Input({elem, onChange}){
+function Input({elem, change, onValid}){
 
   let type = "text";
 
-  if(elem[1] === "password"){
+  if(elem[1] === "password" || elem[1] === "passwordReg"){
     type = "password";
   }
-  function valid(elem){
-    for (let i = 0; i < Logins.length; i++){
-    if(type === "text")
-      if(Logins[i].login === elem){
-      return {borderColor: "green"};
-      }
-      else {
-      return {borderColor: "red"};
-      }
-    if(type === "password")
-      if(elem === Logins[i].password){
-      return {borderColor: "green"};
-      }
-      else {
-      return {borderColor: "red"};
-      } 
-    } 
-  }
+  
+  
   return(
     <div>
-      <label>{elem[1]} :</label>
+      <label>{elem[2]} :</label>
             <input
-              style = {valid(elem[0])}
               id = {elem[1]}
               type= {type}
-              placeholder={elem[1]}
+              placeholder={"Enter your " + elem[1]}
               value = {elem[0]}
-              onChange= {(e)=>onChange(elem[1],e.target.value )}
+              onChange= {(e)=> change(elem[1],e.target.value )}
+              style = {onValid(elem[0])}
             />
             <br />
             <br />
@@ -48,6 +32,7 @@ function Input({elem, onChange}){
 
 Input.propTypes = {
   elem: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired,
+  change: PropTypes.func.isRequired,
+  onValid: PropTypes.func.isRequired
 }
 export default Input;
