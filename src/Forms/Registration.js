@@ -24,13 +24,13 @@ class Registration extends React.Component {
     this.setState({[idData]: dataInput})
   }
 
-  handlerValid(elem){
-    console.log(elem + " " + /d+/.test(5).val)
+  handlerValid=(elem)=>{
+    console.log((elem).match("^\[a-zA-Z0-9]{5,6}$") + " " + (elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$"));
     for(let i = 0; i< Logins.length; i++){
-    if((/^d+/.test(elem))
+    if((elem).match("^\[a-zA-Z0-9]{5,6}$") != null)
     return {borderColor: "green"};
     else {
-    if(elem.length === 3)
+    if((elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$") !== null)
     return {borderColor: "green"};
     return {borderColor: "red"}
     }
