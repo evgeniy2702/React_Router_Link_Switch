@@ -43,7 +43,7 @@ class Login extends React.Component {
   render() {   
     const{login, password, logger} = this.state;
     const data = [
-      [login,"login"],[password, "password"]
+      [login,"Your login"],[password, "Your password"]
     ];
 
     if(!logger){

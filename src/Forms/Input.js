@@ -35,7 +35,7 @@ function Input({elem, onChange}){
               style = {valid(elem[0])}
               id = {elem[1]}
               type= {type}
-              placeholder={"Enter your " + elem[1]}
+              placeholder={elem[1]}
               value = {elem[0]}
               onChange= {(e)=>onChange(elem[1],e.target.value )}
             />

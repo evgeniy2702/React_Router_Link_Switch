@@ -46,7 +46,7 @@ class Registration extends React.Component {
   render() {
     const{ login, password} = this.state;
     const data = [
-      [login,"Enter your login"],[password, "Enter youpassword"]
+      [login,"Enter your login"],[password, "Enter your password"]
     ];
     return (
       <div>     
