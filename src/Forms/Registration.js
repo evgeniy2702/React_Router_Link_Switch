@@ -26,7 +26,6 @@ class Registration extends React.Component {
   }
 
   handlerValid(elem){
-    console.log((elem).match("^\[a-zA-Z0-9]{5,6}$") + " " + (elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$"));
     for(let i = 0; i< Logins.length; i++){
     if((elem).match("^\[a-zA-Z0-9]{5,6}$") != null){
       return {borderColor: "green"};
@@ -71,7 +70,7 @@ class Registration extends React.Component {
   }
   } 
   componentDidUpdate(){
-    console.log(this.state)
+    console.log(this.state);
   }
 }
 
