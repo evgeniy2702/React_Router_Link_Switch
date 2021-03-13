@@ -34,7 +34,6 @@ export default class Picload extends React.Component {
     var pic = {id: (Pictures.length+1),name:this.state.name, src: this.state.src };
     Pictures.push(pic);
     this.setState({flag: true});
-    console.log(Pictures);
   }
 
   render(){

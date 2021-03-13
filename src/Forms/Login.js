@@ -23,28 +23,27 @@ class Login extends React.Component {
   }  
 
   onChange(idData,dataInput) {
-    console.log(dataInput);
     this.setState({[idData]: dataInput})
   }
 
   handlerValid(elem){
-    console.log(Logins);
-    for(let i = 0; i< Logins.length; i++){
-      
-       
-    if(elem === Logins[i].login){
-    return {borderColor: "green"};
-    }
-    if(elem === Logins[i].password){ 
-      return {borderColor: "green"};
-    }
-    return {borderColor: "red"}
-   }
+    var style = "red"
+    Logins.map(item => {
+      if(item.login === elem){
+           style = "green";
+           console.log("Log " + item.login + " " + style);
+      } else if(item.password === elem){
+      style = "green";  
+      console.log("Pass " + item.password + " " + style);
+      }
+    });
+    style = style;
+    console.log("End handler " + style);
+    return {borderColor: style};
   }
 
   onSubmit(e){
     e.preventDefault();
-    console.log(Logins);
     this.setState({loader: true});
     if(login.length !== 0){
     for(let i = 0; i < Logins.length; i ++){
