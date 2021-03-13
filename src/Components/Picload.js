@@ -11,7 +11,7 @@ class Picload extends React.Component {
 
   render(){
     return(
-      <div>Hello</div>
+      <div>Hello. PicLoad will be there.</div>
     );
   }
 }
