@@ -1,6 +1,6 @@
 import React from "react";
 import "../style.css";
-import {Route} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 import Logins from "./../Const/Logins";
 import Input  from "./../Forms/Input";
@@ -35,7 +35,7 @@ class Registration extends React.Component {
       if((elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$") !== null){
         return {borderColor: "green"};
       }
-      
+
     return {borderColor: "red"}
     }
     }
@@ -45,18 +45,16 @@ class Registration extends React.Component {
     e.preventDefault();
     let newUser = {id:(array.length+1), login: loginReg, password: passwordReg};
     array.push(newUser);
-    console.log(array);
-    this.setState({array: array});
     this.setState({reg: true});
-    console.log(Logins);
-    console.log(this.reg)
+  
     }
 
   render() {
-    const{ loginReg, passwordReg} = this.state;
+    const{ loginReg, passwordReg, reg} = this.state;
     const data = [
       [loginReg,"loginReg","Enter your Login"],[passwordReg, "passwordReg","Enter your Password"]
     ];
+    if(!reg){
     return (
       <div>     
       <form onSubmit={this.onSubmit}>
@@ -68,7 +66,10 @@ class Registration extends React.Component {
       </form>
       </div>
     );
+    } else {
+    return <Redirect from="/registration" to="/picload" />
   }
+  } 
   componentDidUpdate(){
     console.log(this.state)
   }

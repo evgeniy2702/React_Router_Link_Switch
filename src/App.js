@@ -73,7 +73,7 @@ class Main extends React.Component {
           <Route path="/interestingList" component={Items} />
           <Route path="/pics" component={Pics} />
           <Route path="/login" component={Login} array ={array}/>
-          <Route path="/registration" component={Registration} array = {array}/>
+          <Route path="/registration" component={Registration}/>
           <Route path="/picload" component={PicLoad} />
           <Redirect from ="/" to ="" />
         </Switch>
