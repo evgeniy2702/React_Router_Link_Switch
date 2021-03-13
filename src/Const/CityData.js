@@ -1,5 +1,5 @@
 
-const CityData = {
+var CityData = {
   about: {
     name: "Kiev",
     population: 45000,

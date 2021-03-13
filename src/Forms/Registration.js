@@ -13,7 +13,8 @@ class Registration extends React.Component {
     super(props);
     this.state = {
       loginReg:"",
-      passwordReg:""
+      passwordReg:"",
+      reg: false
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -24,14 +25,17 @@ class Registration extends React.Component {
     this.setState({[idData]: dataInput})
   }
 
-  handlerValid=(elem)=>{
+  handlerValid(elem){
     console.log((elem).match("^\[a-zA-Z0-9]{5,6}$") + " " + (elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$"));
     for(let i = 0; i< Logins.length; i++){
-    if((elem).match("^\[a-zA-Z0-9]{5,6}$") != null)
-    return {borderColor: "green"};
+    if((elem).match("^\[a-zA-Z0-9]{5,6}$") != null){
+      return {borderColor: "green"};
+    }
     else {
-    if((elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$") !== null)
-    return {borderColor: "green"};
+      if((elem).match("^\[a-zA-Z0-9]{2,}[@][a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,3}$") !== null){
+        return {borderColor: "green"};
+      }
+      
     return {borderColor: "red"}
     }
     }
@@ -39,6 +43,13 @@ class Registration extends React.Component {
 
   onSubmit(e){
     e.preventDefault();
+    let newUser = {id:(array.length+1), login: loginReg, password: passwordReg};
+    array.push(newUser);
+    console.log(array);
+    this.setState({array: array});
+    this.setState({reg: true});
+    console.log(Logins);
+    console.log(this.reg)
     }
 
   render() {
@@ -55,7 +66,6 @@ class Registration extends React.Component {
         })}
         <button>SEND</button>
       </form>
-    
       </div>
     );
   }

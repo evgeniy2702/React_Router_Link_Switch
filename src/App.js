@@ -14,8 +14,11 @@ import MainInteresting from "./Components/MainInteresting";
 import Interesting from "./Components/Interesting";
 import Pics from "./Components/Pics";
 import Items from "./Components/Items";
+import PicLoad from "./Components/Picload";
 import Login from "./Forms/Login";
 import Registration from "./Forms/Registration";
+
+let array = [];
 
 export default class App extends React.Component {
   render() {
@@ -69,8 +72,9 @@ class Main extends React.Component {
           <Route path="/interesting" component={Interesting} />
           <Route path="/interestingList" component={Items} />
           <Route path="/pics" component={Pics} />
-          <Route path="/login" component={Login} />
-          <Route path="/registration" component={Registration} />
+          <Route path="/login" component={Login} array ={array}/>
+          <Route path="/registration" component={Registration} array = {array}/>
+          <Route path="/picload" component={PicLoad} />
           <Redirect from ="/" to ="" />
         </Switch>
       </main>

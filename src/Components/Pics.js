@@ -3,6 +3,10 @@ import "./../style.css";
 import  Pictures  from "./../Const/Pictures";
 
 export default class Pics extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <ul className="pics">

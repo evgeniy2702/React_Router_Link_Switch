@@ -2,7 +2,7 @@ import React from "react";
 import "./../style.css";
 import PropTypes from "prop-types";
 
-function Input({elem, change, onValid}){
+function Input({elem, change, onValid, blockButton}){
 
   let type = "text";
 

@@ -1,5 +1,5 @@
 
-const Pictures = [
+var Pictures = [
     {
        id:1,
       name: "First pic",
