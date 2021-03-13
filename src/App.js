@@ -17,6 +17,7 @@ import Items from "./Components/Items";
 import PicLoad from "./Components/Picload";
 import Login from "./Forms/Login";
 import Registration from "./Forms/Registration";
+import Pictures from "./Const/Pictures";
 
 let array = [];
 
@@ -71,7 +72,7 @@ class Main extends React.Component {
           <Route path="/main/interesting" component={MainInteresting} />
           <Route path="/interesting" component={Interesting} />
           <Route path="/interestingList" component={Items} />
-          <Route path="/pics" component={Pics} />
+          <Route path="/pics" component={Pics} pics={Pictures}/>
           <Route path="/login" component={Login} array ={array}/>
           <Route path="/registration" component={Registration}/>
           <Route path="/picload" component={PicLoad} />

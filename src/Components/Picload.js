@@ -1,7 +1,9 @@
 import React from "react";
 import "./../style.css";
+import {Redirect} from "react-router-dom";
 import  Pictures  from "./../Const/Pictures";
 import Input  from "./../Forms/Input";
+
 
 
 export default class Picload extends React.Component {
@@ -10,6 +12,7 @@ export default class Picload extends React.Component {
     super(props);
     var logins = this.props.array;
     this.state = {
+      name:"",
       src:"",
       flag: false
     };
@@ -28,22 +31,31 @@ export default class Picload extends React.Component {
     return {borderColor: "red"};
   }
 
-  onSubmit(){
-    console.log(Pictures.length);
-    
+  onSubmit(e){
+    var pic = {id: (Pictures.length+1),name:this.state.name, src: this.state.src };
+    Pictures.push(pic);
+    this.setState({flag: true});
+    console.log(Pictures);
   }
+
   render(){
-    const {src} = this.state;
-    var item = [src,"src","Enter url of pictures"];
+    const {src, flag, name} = this.state;
+    var data = [[name,"name", "Enter pics name"],[src,"src","Enter url of pictures"]];
+    if(!flag){
     return(
       <div>
         <form onSubmit = {this.onSubmit}>
           <h2>Hello. PicLoad will be there.</h2>
-            <Input elem = {item} key = {Pictures.length + 1} change = {this.onChange}  onValid = {this.handlerValid} />
+           {data.map( (item, index) => {
+          return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} />
+        })}
           <button> SEND </button>
         </form>  
       </div>
     );
+    } else {
+      return <Redirect from="/picload" to="/pics" pics = {Pictures}/>
+    }
   }
   
 }
