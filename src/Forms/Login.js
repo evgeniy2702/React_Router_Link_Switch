@@ -81,6 +81,9 @@ class Login extends React.Component {
       <div>     
       <form onSubmit={this.onSubmit}>
       <h2>Sign in :</h2>
+      <h4>For first enter</h4> 
+      <p>login = qwe</p>
+      <p>password = 123</p>
         {data.map( (item, index) => {
           return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} />
         })}

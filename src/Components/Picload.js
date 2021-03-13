@@ -43,7 +43,9 @@ export default class Picload extends React.Component {
     return(
       <div>
         <form onSubmit = {this.onSubmit}>
-          <h2>Hello. PicLoad will be there.</h2>
+          <h2>For example :</h2>
+          <p>Name of pic enter = something</p>
+          <p> src = https://st2.depositphotos.com/1053646/6104/i/600/depositphotos_61040615-stock-photo-dubai-downtown-night-scene.jpg</p>
            {data.map( (item, index) => {
           return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} />
         })}
