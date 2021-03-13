@@ -30,16 +30,16 @@ class Login extends React.Component {
   handlerValid(elem){
     console.log(Logins);
     for(let i = 0; i< Logins.length; i++){
-      console.log(elem + " " + Logins[i].login);
-       }
-    // if(elem === Logins[i].login){
-    // return {borderColor: "green"};
-    // }
-    // if(elem === Logins[i].password){ 
-    //   return {borderColor: "green"};
-    // }
+      
+       
+    if(elem === Logins[i].login){
+    return {borderColor: "green"};
+    }
+    if(elem === Logins[i].password){ 
+      return {borderColor: "green"};
+    }
     return {borderColor: "red"}
-   
+   }
   }
 
   onSubmit(e){
