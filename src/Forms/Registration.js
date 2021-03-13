@@ -5,8 +5,6 @@ import {Redirect} from "react-router-dom";
 import Logins from "./../Const/Logins";
 import Input  from "./../Forms/Input";
 
-const array = Logins;
-
 class Registration extends React.Component {
   
   constructor(props){
@@ -42,10 +40,11 @@ class Registration extends React.Component {
 
   onSubmit(e){
     e.preventDefault();
-    let newUser = {id:(array.length+1), login: loginReg, password: passwordReg};
-    array.push(newUser);
+    console.log(this.state.loginReg);
+    let newUser = {id:(Logins.length+1), login: this.state.loginReg, password: this.state.passwordReg};
+    Logins.push(newUser);
     this.setState({reg: true});
-  
+    console.log(Logins);
     }
 
   render() {
@@ -66,7 +65,7 @@ class Registration extends React.Component {
       </div>
     );
     } else {
-    return <Redirect from="/registration" to="/picload" />
+    return <Redirect from="/registration" to="/login" logins = {Logins}/>
   }
   } 
   componentDidUpdate(){

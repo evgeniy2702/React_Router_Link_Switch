@@ -10,7 +10,6 @@ export default class Picload extends React.Component {
 
   constructor(props){
     super(props);
-    var logins = this.props.array;
     this.state = {
       name:"",
       src:"",
