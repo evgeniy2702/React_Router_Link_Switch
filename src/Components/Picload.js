@@ -18,11 +18,17 @@ export default class Picload extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handlerValid = this.handlerValid.bind(this);
+    this.onImageChange = this.onImageChange.bind(this);
   }  
 
   onChange(idData,dataInput) {
     this.setState({[idData]: dataInput})
   }
+
+  onImageChange(fileList){
+    this.setState({src: URL.createObjectURL(fileList[0])});
+  }
+
   handlerValid (elem){
   if((elem).match('^[^\s]+') != null){
     return {borderColor: "green"};
@@ -47,7 +53,7 @@ export default class Picload extends React.Component {
           <p>Name of pic enter = something</p>
           <p> src = https://st2.depositphotos.com/1053646/6104/i/600/depositphotos_61040615-stock-photo-dubai-downtown-night-scene.jpg</p>
            {data.map( (item, index) => {
-          return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} />
+          return <Input elem = {item} key = {index} onValid = {this.handlerValid} change = {this.onChange} image = {this.onImageChange} />
         })}
           <button> SEND </button>
         </form>  
